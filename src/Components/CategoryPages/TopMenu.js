@@ -62,7 +62,7 @@
 // export default TopMenu;
 
 import { useState, useEffect } from "react";
-import { categoryData } from "./Data";
+import { CATEGORIES, categoryData } from "./Data";
 import { topNav } from "./Data";
 import "./Common.css";
 import TopicList from "./TopicList";
@@ -76,6 +76,10 @@ function TopMenu() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [topicValue, setTopicValue] = useState("");
   const [keywordsValue, setKeywordsValue] = useState("");
+
+  useEffect(() => {
+    setTopics(categoryData);
+  }, [])
 
   useEffect(() => {
     if (item.name === "all") {
@@ -109,18 +113,17 @@ function TopMenu() {
     setKeywordsValue(e.target.value);
   };
 
-  const saveTopic = ({ item }) => {
-    // const newTopic = {
-    //   id: Date.now(), // Generate a unique ID
-    //   category: item.category, // Set the category to "custom" for the custom category
-    //   topic: topicValue,
-    //   keywords: keywordsValue,
-    // };
+  const saveTopic = () => {
+    let keywords = keywordsValue.split(',').map(each => ({label: each}))
+    const newTopic = {
+      id: Date.now(), // Generate a unique ID
+      category: CATEGORIES.CUSTOM.name, // Set the category to "custom" for the custom category
+      topic: topicValue,
+      keywords: keywords,
+    };
 
-    // // Add the new topic to the topics state
-    // setTopics((prevTopics) => [...prevTopics, newTopic]);
+    categoryData.push(newTopic);
 
-    // // Close the modal and reset the input values
     closeModal();
     setTopicValue("");
     setKeywordsValue("");
@@ -168,6 +171,8 @@ function TopMenu() {
             id="topicName"
             name="topicName"
             className="mx-6 my-6"
+            value={topicValue}
+            onChange={(e) => {setTopicValue(e.target.value)}}
             />
           </div>
           <div className="d-grid">
