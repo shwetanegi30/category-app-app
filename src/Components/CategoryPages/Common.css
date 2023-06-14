@@ -28,7 +28,10 @@
 .list{
     border: 1px solid #ced4da;
 }
-
+.line{
+    border: 1px solid #ced4da;
+    width: 100%
+}
 /* .button{
     margin-left: 259px;
 } */

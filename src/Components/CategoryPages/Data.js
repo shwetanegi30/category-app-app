@@ -27,7 +27,12 @@ const categoryData = [
     id: 3,
     topic:
       "How Fast Turnaround Times in Logo and Website Design Benefit your Business",
-    keywords: ["fast turnaround", "logo design", "website design", "branding"],
+    keywords: [
+      "fast turnaround", 
+      "logo design", 
+      "website design", 
+      "branding"
+    ],
     editor: "Write",
   },
   {
@@ -58,3 +63,8 @@ const categoryData = [
   },
 ];
 export default categoryData;
+
+
+
+
+

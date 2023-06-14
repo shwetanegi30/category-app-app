@@ -15,7 +15,7 @@ function TopBar() {
         </div>
 
         <div className="left-side">
-          <button type="button" class="btn-add"> Add Topic <i class="fa-sharp fa-light fa-angle-right"></i></button>
+          <button type="button" className="btn-add"> Add Topic <i className="fa-sharp fa-light fa-angle-right"></i></button>
         </div>
       </div>
     </div>
