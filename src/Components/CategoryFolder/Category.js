@@ -1,15 +1,13 @@
 import React from 'react';
 import Heading from '../CategoryPages/Heading';
-import TopBar from '../CategoryPages/TopMeanu';
-import TopicList from '../CategoryPages/TopicList';
+import TopMenu from '../CategoryPages/TopMenu';
 
 
 function Category() {
   return (
     <div className=''>
       <Heading />
-      <TopBar />
-      <TopicList />
+      <TopMenu />
     </div>
   )
 }

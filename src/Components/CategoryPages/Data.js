@@ -1,13 +1,26 @@
-const categoryData = [
+export const categoryData = [
   {
     id: 1,
     topic:
       "The importance of Establishing a Strong Online Presence for Small Businesses",
+      category: "ICP",
     keywords: [
-      "online presence",
-      "small businesses",
-      "digital marketing",
-      "branding",
+      {
+        label: "online presence",
+        color: "btn btn-outline-warning",
+      },
+      {
+        label: "small businesses",
+        color: "btn btn-outline-success",
+      },
+      {
+        label: "digital marketing",
+        color: "btn btn-outline-danger",
+      },
+      {
+        label: "branding",
+        color: "btn btn-outline-warning",
+      },
     ],
     editor: "Write",
   },
@@ -15,11 +28,26 @@ const categoryData = [
     id: 2,
     topic: "Affordable Branding Solutions for Startups and Entrepreneurs",
     keywords: [
-      "affordable branding",
-      "startups",
-      "entrepreneurs",
-      "logo design",
-      "website design",
+      {
+        label: "affordable branding",
+        color: "btn btn-outline-warning",
+      },
+      {
+        label: "startups",
+        color: "btn btn-outline-success",
+      },
+      {
+        label: "entrepreneurs",
+        color: "btn btn-outline-danger",
+      },
+      {
+        label: "logo design",
+        color: "btn btn-outline-warning",
+      },
+      {
+        label: "website design",
+        color: "btn btn-outline-success",
+      },
     ],
     editor: "Write",
   },
@@ -27,11 +55,24 @@ const categoryData = [
     id: 3,
     topic:
       "How Fast Turnaround Times in Logo and Website Design Benefit your Business",
+      category: "custom",
     keywords: [
-      "fast turnaround", 
-      "logo design", 
-      "website design", 
-      "branding"
+      {
+        label: "fast turnaround",
+        color: "btn btn-outline-warning",
+      },
+      {
+        label: "logo design",
+        color: "btn btn-outline-success",
+      },
+      {
+        label: "website design",
+        color: "btn btn-outline-danger",
+      },
+      {
+        label: "branding",
+        color: "btn btn-outline-warning",
+      },
     ],
     editor: "Write",
   },
@@ -40,11 +81,26 @@ const categoryData = [
     topic:
       "The Benefits of Comprehensive Branding Services forSsmall to Medium-Sized Businesses",
     keywords: [
-      "comprehensive branding",
-      "small businesses",
-      "logo design",
-      "website design",
-      "social media management",
+      {
+        label: "comprehensive branding",
+        color: "btn btn-outline-warning",
+      },
+      {
+        label: "small businesses",
+        color: "btn btn-outline-success",
+      },
+      {
+        label: "logo design",
+        color: "btn btn-outline-danger",
+      },
+      {
+        label: "website design",
+        color: "btn btn-outline-warning",
+      },
+      {
+        label: "social media management",
+        color: "btn btn-outline-success",
+      },
     ],
     editor: "Write",
   },
@@ -53,18 +109,46 @@ const categoryData = [
     topic:
       "Expert Tips for Choosing the Right Digital Marketing Agency for Your Business",
     keywords: [
-      "digital marketing agency",
-      "tips",
-      "branding",
-      "website design",
-      "social media management",
+      {
+        label: "digital marketing agency",
+        color: "btn btn-outline-warning",
+      },
+      {
+        label: "tips",
+        color: "btn btn-outline-success",
+      },
+      {
+        label: "branding",
+        color: "btn btn-outline-danger",
+      },
+      {
+        label: "website design",
+        color: "btn btn-outline-warning",
+      },
+      {
+        label: "social media management",
+        color: "btn btn-outline-success",
+      },
     ],
     editor: "Write",
   },
 ];
-export default categoryData;
 
 
-
-
-
+export const topNav = [
+  {
+    name: "all",
+  },
+  {
+    name: "custom",
+  },
+  {
+    name: "ICP",
+  },
+  {
+    name: "mission",
+  },
+  {
+    name: "product",
+  },
+];
