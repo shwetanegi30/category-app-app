@@ -6,19 +6,15 @@ import "./App.css";
 
 
 function App() {
-  return (
-   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<CategoryFolder />} />
-    </Routes>
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<CategoryFolder />} />
+                <Route path="/editor" element={<Editor />} />
+            </Routes>
 
-    <Routes>
-          {/* <Route path="/addTopic" element={<AddingTopics />} /> */}
-          <Route path="/editor" element={<Editor />} />
-        </Routes>
-
-   </BrowserRouter>
-  )
+        </BrowserRouter>
+    )
 }
 
 export default App
