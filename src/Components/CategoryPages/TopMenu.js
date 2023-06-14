@@ -109,6 +109,8 @@ function TopMenu() {
     setKeywordsValue(e.target.value);
   };
 
+  
+
   const saveTopic = ({ item }) => {
     // const newTopic = {
     //   id: Date.now(), // Generate a unique ID
@@ -128,7 +130,7 @@ function TopMenu() {
 
   return (
     <div className="container">
-      <div className="d-flex align-items-center gap-3">
+      <div className="d-flex align-items-center gap-3 mt-3">
         {topNav.map((item, index) => {
           return (
             <span
@@ -164,10 +166,10 @@ function TopMenu() {
           <div className="d-grid">
             <label htmlFor="topicname" className="fw-500 fs-20 py-6 px-6 topic-name">Topic:</label>
             <input
-             type="text"
-            id="topicName"
-            name="topicName"
-            className="mx-6 my-6"
+           type="text" 
+           value={topicValue} 
+           onChange={handleTopicChange}
+           className="input"
             />
           </div>
           <div className="d-grid">
@@ -176,11 +178,11 @@ function TopMenu() {
               type="text"
               value={keywordsValue}
               onChange={handleKeywordsChange}
-              className="mx-6 my-6"
+              className="input"
             />
           </div>
     </div>
-          <button type="button" onClick={saveTopic} className="text-center-btn">
+          <button type="button" onClick={saveTopic} className="btn-add text-center px-2 py-1">
             Save
           </button>
         </div>
