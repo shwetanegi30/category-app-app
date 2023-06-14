@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import categoryData from "./Data";
+
+import { Link } from "react-router-dom";
 
 function TopicList() {
   const keywordColors = {
@@ -16,23 +18,15 @@ function TopicList() {
     "social media management": "btn btn-outline-success",
     "comprehensive branding": "btn btn-outline-warning",
   };
-  // const [topic, setTopic] = useState(categoryData)
 
   return (
     <div className="container">
       <div className="box">
-        {/* <input
-          type="text"
-          placeholder="Recommended Topics"
-          className="form-control ps-4 h-35 w-92 mt-3"
-        /> */}
-        <div className="form-control ps-4 h-35 w-92 mt-3">
-          Recommended Topics
-        </div>
+        <div className="ps-4 h-35 w-92 mt-4 pt-2 head">Recommended Topics</div>
       </div>
-      <div className="list pt-4 ps-4">
-        {categoryData.map((list) => (
-          <div className="topic d-flex align-items-center justify-content-between">
+      <div className="list">
+        {categoryData.map((list, index) => (
+          <div className="topic ps-4 pt-4 mb-2 d-flex align-items-center justify-content-between">
             <div key={list.id}>
               <h3 className="fs-5">{list.topic}</h3>
               <div className="pt-2 pb-4">
@@ -54,20 +48,16 @@ function TopicList() {
 <button type="button" class="btn btn-outline-danger">{list.keywords[4]}</button> */}
               </div>
             </div>
-           
-            <div className="button">
-              <button className="btn-add me-3"> {list.editor} </button>
-            </div>
-           
-          </div>     
+
+            <Link to="/editor">
+              <div className="button">
+                <button className="btn-add me-3"> {list.editor} </button>
+              </div>
+            </Link>
+          </div>
         ))}
-        <hr />
-        {/* <div  /> */}
-            
       </div>
-     
     </div>
-    
   );
 }
 

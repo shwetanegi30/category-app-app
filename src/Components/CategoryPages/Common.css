@@ -13,16 +13,23 @@
 .btn:hover{
     cursor: pointer;
 }
+.topic{
+    border-top: 1px solid #ced4da;
+    height: 88px;
+    width: 100%;
+}
 .top-bar{
     gap: 42%;
     margin-left: 96px;
 }
-.form-control,
+.head,
 .list{
     width: 92%;
 }
-.form-control{
+.head{
     height: 40px;
+    border: 1px solid #ced4da;
+    border-bottom: 0px;
 }
 
 .list{
@@ -38,3 +45,24 @@
 /* .topic{
     gap: 25%;
 } */
+
+
+form label{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 6px;
+}
+form input{
+    height: 36px;
+    border: 1px solid #ced4da;
+    margin: 6px;
+    padding: 10px;
+}
+
+button[type]{
+    font-size: 20px;
+    height: 36px;
+    margin-bottom: 13px;
+    margin-top: 23px;
+    border: none;
+}
