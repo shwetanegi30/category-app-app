@@ -1,0 +1,37 @@
+.name:hover{
+    color: rgb(255, 102, 0);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.btn-add{
+    background-color:rgb(255, 102, 0) ;
+    color: white;
+    border: none;
+    padding: 8px;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.top-bar{
+    gap: 42%;
+    margin-left: 96px;
+}
+.form-control,
+.list{
+    width: 92%;
+}
+.form-control{
+    height: 40px;
+}
+
+.list{
+    border: 1px solid #ced4da;
+}
+
+/* .button{
+    margin-left: 259px;
+} */
+/* .topic{
+    gap: 25%;
+} */
