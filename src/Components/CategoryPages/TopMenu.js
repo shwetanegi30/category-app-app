@@ -1,68 +1,5 @@
-// import { useState, useEffect } from "react";
-// import { categoryData } from "./Data";
-// import { topNav } from "./Data";
-// import "./Common.css";
-// import TopicList from "./TopicList";
-
-// function TopMenu() {
-//   const [item, setItem] = useState({ name: "all" });
-//   const [topics, setTopics] = useState([]);
-//   const [active, setActive] = useState(0);
-
-//   useEffect(() => {
-//     if (item.name === "all") {
-//       setTopics(categoryData);
-//     } else {
-//       const newTopics = categoryData.filter((topic) => {
-//         return topic.category === item.name;
-//       });
-//       setTopics(newTopics);
-//     }
-//   }, [item]);
-
-//   const handleClick = (e, index) => {
-//     setItem({ name: e.target.textContent });
-//     setActive(index);
-//   };
-
-//   return (
-//     <div className="container">
-
-//         <div className="d-flex align-items-center gap-3">
-//           {topNav.map((item, index) => {
-//             return (
-//               <span
-//                 onClick={(e) => {
-//                   handleClick(e, index);
-//                 }}
-//                 className={`ms-5 fs-5 fw-500 ${active === index ? "active-work" : ""} work-item `}
-//                 key={index}
-//               >
-//                 {item.name}
-//               </span>
-//             );
-//           })}
-//           <div className="left-side">
-//             <button type="button" className="btn-add">
-//               Add Topic <i className="fas fa-angle-right"></i>
-//             </button>
-//           </div>
-//         </div>
-//         <div className="ps-4 h-35 w-92 mt-4 pt-2 head">Recommended Topics</div>
-//         <div className="">
-//           {topics.map((item) => {
-//             return <TopicList item={item} key={item.id} />;
-//           })}
-//         </div>
-
-//     </div>
-//   );
-// }
-
-// export default TopMenu;
-
 import { useState, useEffect } from "react";
-import { categoryData } from "./Data";
+import { CATEGORIES, categoryData } from "./Data";
 import { topNav } from "./Data";
 import "./Common.css";
 import TopicList from "./TopicList";
@@ -76,6 +13,10 @@ function TopMenu() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [topicValue, setTopicValue] = useState("");
   const [keywordsValue, setKeywordsValue] = useState("");
+
+  useEffect(() => {
+    setTopics(categoryData);
+  }, []);
 
   useEffect(() => {
     if (item.name === "all") {
@@ -109,23 +50,29 @@ function TopMenu() {
     setKeywordsValue(e.target.value);
   };
 
-  
+  const saveTopic = () => {
+    let keywords = keywordsValue.split(",").map((each) => ({ label: each }));
+    const newTopic = {
+      id: Date.now(), // Generate a unique ID
+      category: CATEGORIES.CUSTOM.name, // Set the category to "custom" for the custom category
+      topic: topicValue,
+      keywords: keywords,
+    };
 
-  const saveTopic = ({ item }) => {
-    // const newTopic = {
-    //   id: Date.now(), // Generate a unique ID
-    //   category: item.category, // Set the category to "custom" for the custom category
-    //   topic: topicValue,
-    //   keywords: keywordsValue,
-    // };
+    categoryData.push(newTopic);
 
-    // // Add the new topic to the topics state
-    // setTopics((prevTopics) => [...prevTopics, newTopic]);
+    // Close the modal and reset the input values
 
-    // // Close the modal and reset the input values
     closeModal();
     setTopicValue("");
     setKeywordsValue("");
+  };
+
+  
+  const deleteTopic = (id) => {
+    // Filter out the topic with the specified id
+    const updatedTopics = topics.filter((topic) => topic.id !== id);
+    setTopics(updatedTopics);
   };
 
   return (
@@ -146,7 +93,7 @@ function TopMenu() {
             </span>
           );
         })}
-        <div className="left-side">
+        <div className="right-side">
           <button type="button" className="btn-add" onClick={openModal}>
             Add Topic <i className="fas fa-angle-right"></i>
           </button>
@@ -155,7 +102,7 @@ function TopMenu() {
       <div className="ps-4 h-35 w-92 mt-4 pt-2 head">Recommended Topics</div>
       <div className="">
         {topics.map((item) => {
-          return <TopicList item={item} key={item.id} />;
+          return <TopicList item={item} key={item.id} onDelete={deleteTopic} />;   
         })}
       </div>
 
@@ -163,28 +110,43 @@ function TopMenu() {
         <div className="container">
           <h2 className="text-center mt-5 mb-4 fw-500 fs-4">Add Topic</h2>
           <div className="d-flex flex-column">
-          <div className="d-grid">
-            <label htmlFor="topicname" className="fw-500 fs-20 py-6 px-6 topic-name">Topic:</label>
-            <input
-           type="text" 
-           value={topicValue} 
-           onChange={handleTopicChange}
-           className="input"
-            />
+            <div className="d-grid">
+              <label
+                htmlFor="topicname"
+                className="fw-500 fs-20 py-6 px-6 topic-name"
+              >
+                Topic:
+              </label>
+              <input
+                type="text"
+                value={topicValue}
+                onChange={(e) => {
+                  setTopicValue(e.target.value);
+                }}
+                className="input"
+              />
+            </div>
+            <div className="d-grid">
+              <label className="fw-500 fs-20 py-6 px-6 topic-name">
+                Keywords:
+              </label>
+              <input
+                type="text"
+                value={keywordsValue}
+                onChange={handleKeywordsChange}
+                className="input"
+              />
+            </div>
           </div>
-          <div className="d-grid">
-            <label className="fw-500 fs-20 py-6 px-6 topic-name">Keywords:</label>
-            <input
-              type="text"
-              value={keywordsValue}
-              onChange={handleKeywordsChange}
-              className="input"
-            />
-          </div>
-    </div>
-          <button type="button" onClick={saveTopic} className="btn-add text-center px-2 py-1">
+          <div className="d-flex justify-content-center align-items-center mt-2">
+          <button
+            type="button"
+            onClick={saveTopic}
+            className="btn-add text-center px-2 py-1"
+          >
             Save
           </button>
+          </div>
         </div>
       </Modal>
     </div>

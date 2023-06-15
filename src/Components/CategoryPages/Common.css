@@ -1,99 +1,111 @@
- .btn-add{
-    background-color:rgb(255, 102, 0) ;
-    color: white;
-    border: none;
-    padding: 8px;
-}
-.btn:hover{
-    cursor: pointer;
-}
-button[type]{
-    font-size: 20px;
-    height: 36px;
-    border: none;
-    padding: 4px;
-}
+ .btn-add {
+     background-color: rgb(255, 102, 0);
+     color: white;
+     border: none;
+     padding: 8px;
+ }
 
-.topic{
-    border-top: 1px solid #ced4da;
-    height: 88px;
-    width: 100%;
-}
-.top-bar{
-    gap: 42%;
-    margin-left: 96px;
-}
+ .btn:hover {
+     cursor: pointer;
+ }
+
+ button[type] {
+     font-size: 20px;
+     height: 36px;
+     border: none;
+     padding: 4px;
+ }
 
 
+ form label {
+     font-size: 18px;
+     font-weight: 500;
+     padding: 6px;
+ }
 
-.list{
-    border: 1px solid #ced4da;
-}
-.line{
-    border: 1px solid #ced4da;
-    width: 100%
-}
+ form input {
+     height: 36px;
+     border: 1px solid #ced4da;
+     margin: 6px;
+     padding: 10px;
+ }
 
 
 
-form label{
-    font-size: 18px;
-    font-weight: 500;
-    padding: 6px;
-}
-form input{
-    height: 36px;
-    border: 1px solid #ced4da;
-    margin: 6px;
-    padding: 10px;
-}
+ /* topmenu */
+
+ .active-work {
+     color: white;
+     background-color: rgb(245, 214, 193);
+     padding: 3px 9px;
+ }
+
+ .work-item {
+     text-transform: capitalize;
+ }
+
+ .work-item:hover {
+     color: rgb(255, 102, 0);
+     text-decoration: underline;
+     cursor: pointer;
+ }
+
+ .head {
+     height: 45px;
+     border: 1px solid #ced4da;
+     border-bottom: 0px;
+     background-color: #e8f1fb;
+ }
+
+ .topic {
+     border-top: 1px solid #ced4da;
+     height: 88px;
+     width: 100%;
+ }
+
+ .top-bar {
+     gap: 42%;
+     margin-left: 96px;
+ }
+
+ .topic-name {
+     font-weight: 500;
+     font-size: 20px;
+     padding: 6px;
+ }
+
+ .text-center {
+     text-align: center;
+     margin-top: 30px;
+ }
+
+ .input {
+     border: 1px solid #ced4da;
+     padding: 8px;
+ }
+
+ #delete-icon {
+     cursor: pointer;
+     color: red;
+     margin-left: 10px;
+ }
+
+ .right-side {
+     margin-left: auto;
+ }
 
 
+ /* topic-list */
 
-/* topmenu */
+ .keyword {
+     padding: 10px;
+ }
 
-.active-work {
-    color: white;
-    background-color: rgb(245, 214, 193);
-    padding: 3px 9px ;
-  }
+ .list {
+     border: 1px solid #ced4da;
+ }
 
-  .work-item {
-    text-transform: capitalize;
-  }
-  
-  .work-item:hover {
-    color: rgb(255, 102, 0);
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
-  .head{
-    height: 45px;
-    border: 1px solid #ced4da;
-    border-bottom: 0px;
-}
-
-.topic-name{
-    font-weight: 500;
-    font-size: 20px;
-    padding: 6px;
-}
-.text-center{
-    text-align: center;
-    margin-top: 30px;
-}
-.input{
-    border: 1px solid #ced4da;
-    padding: 8px;
-}
-
-#delete-icon {
-    cursor: pointer;
-    color: red;
-    margin-left: 10px;
-  }
-  
-  /* .button {
-    display: inline-block;
-  } */
+ .line {
+     border: 1px solid #ced4da;
+     width: 100%
+ }
