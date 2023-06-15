@@ -38,7 +38,7 @@ const Editor = (props) => {
   return (
     <div>
       <div className="container">
-        <div style={{ height: 400 }}>
+        <div style={{ height: 400, marginTop:50 }}>
           <div ref={quillRef} />
         </div>
       </div>

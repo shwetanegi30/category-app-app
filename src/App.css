@@ -9,5 +9,6 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(247, 234, 247);
+    background-image: linear-gradient(to right top, #ffebf7, #fbebfa, #f6ebfc, #f1ecfe, #ebecff, #e7edff, #e3effe, #e0f0fd, #e0f2fb, #e1f3f8, #e3f4f6, #e6f5f4);
+    /* background-image: linear-gradient(to right top, #ffd5ed, #f5d9f2, #ecdcf5, #e5e0f4, #e1e2f2, #dee4f2, #dbe5f1, #dae6ef, #d6e8f0, #d2e9ef, #cfebed, #cdece9); */
 }
